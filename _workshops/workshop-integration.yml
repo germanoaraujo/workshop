@@ -1,9 +1,9 @@
 kind: Template
 apiVersion: v1
 metadata:
-  name: starter-guides
+  name: workshop-integration
   annotations:
-    description: Template to deploy a workshop guide with workshopper. Look into any of the workshops for the used variables that can be defined in the configMap.
+    description: Template to deploy a workshop guide with workshopper. 
 parameters:
 - name: APPNAME
   description: Application name
@@ -11,8 +11,8 @@ parameters:
   displayName: Application name
   required: true
 - name: CONTENT_URL_PREFIX
-  description: Console url (e.g. https://raw.githubusercontent.com/openshift-labs/starter-guides/ocp-3.11)
-  value: https://raw.githubusercontent.com/openshift-labs/starter-guides/ocp-3.11
+  description: Console url (e.g. https://github.com/germanoaraujo/workshop-integration-v2)
+  value: https://github.com/germanoaraujo/workshop-integration-v2
   displayName: Content URL prefix
   required: true
 - name: WORKSHOPS_URLS
@@ -41,10 +41,10 @@ objects:
   data:
     LOG_TO_STDOUT: "true"
     WORKSHOPS_URLS: ${WORKSHOPS_URLS}
-    workshop.yml: |+
+    integration-day-guides.yml: |+
       ---
-      id: workshop
-      name: Developing Java Applications on OpenShift - Starter Lab
+      id: integration-day-workshop
+      name: WorkShop - Integration Day
 
       content:
         url: ${CONTENT_URL_PREFIX}
@@ -56,27 +56,9 @@ objects:
 
       modules:
         activate:
-        - common-environment
-        - common-cli
-        - common-explore
-        - common-parksmap-architecture
-        - parksmap-docker
-        - parksmap-scaling
-        - parksmap-routes
-        - parksmap-logging
-        - parksmap-permissions
-        - parksmap-rsh
-        - nationalparks-java
-        - nationalparks-java-databases
-        - nationalparks-application-health
-        - nationalparks-java-pipeline
-        - nationalparks-java-pipeline-codechanges-gogs
-        - mlbparks-templates
-        - mlbparks-clustering
-        - mlbparks-binary-build
-        - mlbparks-debugging
-        - common-further-resources
-        - common-workshop-links
+         - introducao
+         - integrator-contract-first
+         - integrator-api-mocks
 - kind: ImageStream
   apiVersion: v1
   metadata:

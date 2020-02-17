@@ -1,0 +1,15 @@
+---
+id: integration-day-workshop
+name: WorkShop - Integration Day 
+
+content:
+  url: https://raw.githubusercontent.com/openshift-labs/starter-guides/ocp-3.9
+
+
+modules:
+  activate:
+  - introducao
+  - integrator-contract-first
+  - integrator-api-mocks
+  
+

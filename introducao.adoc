@@ -1,0 +1,48 @@
+image::common-environment-ocp-architecture.png[OCP Architecture]
+
+Você estará interagindo com um ambiente OpenShift que está sendo executado em um
+nuvem pública. O ambiente consiste nos seguintes sistemas:
+
+* {{ ENV_MASTERS }} master node(s)
+* {{ ENV_INFRA }} infrastructure node(s)
+* {{ ENV_NODES }} Worker Nodes
+* Um servidor NFS
+
+O nó da infraestrutura está fornecendo vários serviços:
+
+* Starter Guide - Guia do Workshop
+* Gogs - Serviço de controle de versão
+* Nexus - Repositório de artefatos
+* Etherpad - Bloco de notas compartilhado
+* Terminal - Console as cloud native
+
+Além disso, um número predefinido de contas de usuário foi provisionado.
+
+Antes de continuar, visite o Etherpad no seguinte URL:
+
+----
+http://etherpad-{{ INFRA_PROJECT }}.{{ ROUTER_ADDRESS }}/p/workshop
+----
+
+Decida uma conta de usuário entre um dos usuários disponíveis ou use
+aquele que lhe foi atribuído pelo instrutor. Encontre esse usuário
+e digite seu nome ao lado. Esta será sua conta de usuário para o
+duração desses exercícios. Por exemplo:
+
+----
+{{ USER_NAME }}=Luke Skywalker
+----
+
+Se você já vê um nome próximo a uma conta de usuário, significa que alguém
+mais já o reivindicou.
+
+Você verá vários blocos de código e comando ao longo desses exercícios.
+Alguns dos blocos de comando podem ser copiados / colados diretamente. Outros exigirão
+modificação do comando antes da execução. Se você vir um bloco de comando com
+uma borda vermelha (veja abaixo), o comando exigirá modificação. Tipicamente
+Esta é uma substituição do seu nome de usuário ou número de usuário:
+
+[source,role=copypaste]
+----
+algum comando para {{ USER_NAME }}
+----
